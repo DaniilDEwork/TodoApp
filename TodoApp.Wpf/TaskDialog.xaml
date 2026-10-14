@@ -1,0 +1,28 @@
+<Window x:Class="TodoApp.Wpf.TaskDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Детали задачи" Width="480" Height="240"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False" FontFamily="Segoe UI" FontSize="14"
+        Background="#F3F5F9" Loaded="TaskDialog_Loaded">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Название задачи" Target="{Binding ElementName=TitleTextBox}"
+               Padding="0" Margin="0,0,0,8" />
+        <TextBox x:Name="TitleTextBox" Grid.Row="1" Padding="8"
+                 VerticalContentAlignment="Center" />
+        <TextBlock x:Name="TitleHint" Grid.Row="2" Margin="0,8,0,0"
+                   FontSize="12" Foreground="#687487" />
+        <StackPanel Grid.Row="3" Orientation="Horizontal"
+                    HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Сохранить" IsDefault="True" Click="SaveButton_Click" />
+            <Button Content="Отмена" IsCancel="True" Margin="0" />
+        </StackPanel>
+    </Grid>
+</Window>
+
